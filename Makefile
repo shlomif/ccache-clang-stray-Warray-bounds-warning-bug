@@ -18,3 +18,13 @@ bad2:
 -DFCS_DBM_WITHOUT_CACHES=1 -DFCS_DEBONDT_DELTA_STATES=1  -O2 -g -DNDEBUG   \
 -fvisibility=hidden -march=corei7-avx -fomit-frame-pointer -c \
 pi_make_microsoft_freecell_board.i
+
+good2:
+	$(SYSTEM_CLANG) -Warray-bounds -DFCS_COMPILE_DEBUG_FUNCTIONS=1 \
+-DFCS_DBM_USE_LIBAVL=1 -DFCS_DBM_WITHOUT_CACHES=1 -DFCS_DEBONDT_DELTA_STATES=1 \
+ -O2 -g -DNDEBUG -frewrite-includes  -fvisibility=hidden -march=corei7-avx -fomit-frame-pointer \
+-E pi_make_microsoft_freecell_board.c -o pi_make_microsoft_freecell_board.i && \
+	$(SYSTEM_CLANG) -DFCS_COMPILE_DEBUG_FUNCTIONS=1 -DFCS_DBM_USE_LIBAVL=1 \
+-DFCS_DBM_WITHOUT_CACHES=1 -DFCS_DEBONDT_DELTA_STATES=1  -O2 -g -DNDEBUG   \
+-fvisibility=hidden -march=corei7-avx -fomit-frame-pointer -c \
+pi_make_microsoft_freecell_board.i
