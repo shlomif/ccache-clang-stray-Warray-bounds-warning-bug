@@ -1,0 +1,8 @@
+=encoding utf8
+
+=head1 ABOUT
+
+A reproduction repository for a problem in ccache when using clang. See
+the C<Makefile> targets.
+
+=cut
